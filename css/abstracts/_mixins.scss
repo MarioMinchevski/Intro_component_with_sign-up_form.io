@@ -1,0 +1,37 @@
+@use "./variables" as var;
+@use "sass:math";
+
+// RESPONSIVE LAPTOP FIRST DESIGN MIXINS
+
+@mixin desktop-M-screen {
+    @media (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin medium-screen {
+    @media (max-width: 950px) {
+        @content;
+    }
+}
+
+@mixin smaller-screen {
+    @media (max-width: 560px) {
+        @content;
+    }
+}
+
+
+%wrap {
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: 10.313rem;
+
+    @include desktop-M-screen {
+        padding-inline: 6.5rem;
+    }
+
+    @include smaller-screen {
+        padding-inline: 1.5rem;
+    }
+}
